@@ -6,10 +6,9 @@ import {
   StatusBar,
   Animated,
   Image,
-  Platform,
 } from 'react-native';
 
-const SplashScreen = () => {
+const SplashScreen = ({ navigation }) => {   // <-- navigation prop yahan lo
   const fadeAnim = new Animated.Value(0);
   const scaleAnim = new Animated.Value(0.5);
 
@@ -29,10 +28,12 @@ const SplashScreen = () => {
       }),
     ]).start();
 
-    // Auto navigate after 2.5 seconds
-    setTimeout(() => {
-      console.log('Navigate to Login Screen');
-    }, 2500);
+    // Auto navigate after 3.5 seconds
+    const timer = setTimeout(() => {
+      navigation.replace('Login'); // 👈 ye line navigate karegi Login screen pe
+    }, 3500);
+
+    return () => clearTimeout(timer); // memory leak avoid
   }, []);
 
   return (
@@ -42,34 +43,34 @@ const SplashScreen = () => {
         backgroundColor="#FFEB3B" 
         translucent={false}
       />
-      
-      <Animated.View 
+
+      <Animated.View
         style={{
           opacity: fadeAnim,
           transform: [{ scale: scaleAnim }],
           alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
-        {/* Logo Image */}
-        <Animated.Image 
-          source={require('../assets/images/ligi.png')}
-          style={styles.logo}
-          resizeMode="contain"
-        />
-        
-        {/* Tagline - Right below logo */}
-        <Text style={styles.tagline}>News in a Zip!</Text>
+        <View style={styles.logoWrapper}>
+          <Animated.Image
+            source={require('../assets/images/ligi.png')}
+            style={styles.logo}
+            resizeMode="contain"
+          />
+          <Text style={styles.tagline}>News in a Zip!</Text>
+        </View>
       </Animated.View>
-      
-      {/* Loading Indicator */}
+
       <View style={styles.loadingContainer}>
         <View style={styles.loadingBar} />
       </View>
-      
+
       <Text style={styles.footer}>Surat Edition • v1.0</Text>
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
@@ -78,25 +79,30 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  logoWrapper: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    // tightly stack logo + tagline
+    marginBottom: 0,
+  },
   logo: {
     width: 350,
     height: 350,
-    marginBottom: -50,  // ← Changed from 25 to 5 (logo ke bilkul neeche!)
-    // Shadow for iOS
+    // removes any internal padding from contain
+    marginBottom: -100, // pulls tagline up close to logo
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
-    // Shadow for Android
     elevation: 8,
   },
   tagline: {
     fontSize: 18,
     color: '#000',
-    opacity: 0.8,
+    opacity: 0.9,
     textAlign: 'center',
-    marginTop: -50,  // ← Changed from 1 to 0 (no gap!)
     fontWeight: '500',
+    marginBottom:100, // extra close look
   },
   loadingContainer: {
     position: 'absolute',

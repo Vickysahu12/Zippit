@@ -1,11 +1,9 @@
 import {Text, View } from 'react-native'
 import React from 'react'
-import SplashScreen from './src/screens/SplashScreen'
+import AppNavigator from './src/navigation/AppNavigator'
 
 const App = () => {
-  return (
-      <SplashScreen/>
-  )
+  return <AppNavigator/>
 }
 
 export default App
