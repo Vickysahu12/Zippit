@@ -25,6 +25,9 @@ const LoginScreen = ({ navigation }) => {
       return;
     }
     console.log('Login clicked:', email, password);
+
+    // For Navigating to newsfeedscreen
+    navigation.replace('NewsFeed')
   };
 
   return (
