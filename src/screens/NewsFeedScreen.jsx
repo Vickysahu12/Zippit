@@ -325,3 +325,5 @@ const styles = StyleSheet.create({
 });
 
 export default NewsFeedScreen;
+
+// work on some discussion about the zippit
