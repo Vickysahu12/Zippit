@@ -314,7 +314,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 16,
     marginBottom: 12,
-    marginTop:1
   },
   locationIcon: { fontSize: 14, marginRight: 5 },
   locationText: { fontSize: 13, color: '#666', fontWeight: '500' },
