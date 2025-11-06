@@ -171,3 +171,6 @@ const styles = StyleSheet.create({
 });
 
 export default NewsCard;
+
+// Lets make some changes in it like made a animated like feature and click the story screen and etc
+
