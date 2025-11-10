@@ -11,6 +11,7 @@ import {
   ScrollView,
   Image,
 } from 'react-native';
+import { Screen } from 'react-native-screens';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -27,7 +28,7 @@ const LoginScreen = ({ navigation }) => {
     console.log('Login clicked:', email, password);
 
     // For Navigating to newsfeedscreen
-    navigation.replace('NewsFeed')
+    navigation.replace('MainApp', {screen: 'NewsFeed'})
   };
 
   return (
