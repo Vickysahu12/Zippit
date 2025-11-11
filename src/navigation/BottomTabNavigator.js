@@ -9,7 +9,7 @@ import NotificationScreen from '../screens/NotificationScreen';
 import Profile from '../screens/Profile';
 
 // Import Custom Icons
-import boy from '../assets/icons/boy.png';
+import boy from '../assets/icons/user.png';
 import reels from '../assets/icons/reels.png';
 import text from '../assets/icons/text.png';
 import Feed from '../assets/icons/Feed.png';
@@ -33,9 +33,9 @@ const BottomTabNavigator = () => {
             iconSource = Feed;
           } else if (route.name === 'Reels') {
             iconSource = reels;
-          } else if (route.name === 'Notifications') {
+          } else if (route.name === 'Alerts') {
             iconSource = text;
-          } else if (route.name === 'Profile') {
+          } else if (route.name === 'profil') {
             iconSource = boy;
           }
 
@@ -45,7 +45,7 @@ const BottomTabNavigator = () => {
                 source={iconSource}
                 style={[
                   styles.icon,
-                  { tintColor: focused ? '#FF6B6B' : '#888' },
+                  { tintColor: focused ? '#FF6B6B' : '#c11c1cff' },
                 ]}
                 resizeMode="contain"
               />
@@ -73,12 +73,12 @@ const BottomTabNavigator = () => {
         options={{ title: 'Reels' }}
       />
       <Tab.Screen
-        name="Notifications"
+        name="Alerts"
         component={NotificationScreen}
         options={{ title: 'Alerts' }}
       />
       <Tab.Screen
-        name="Profile"
+        name="profil"
         component={Profile}
       />
     </Tab.Navigator>
