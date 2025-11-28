@@ -168,88 +168,104 @@ const NotificationsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#FAFAFA',
   },
+
+  // ---------- HEADER ----------
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 20,
-    paddingVertical: 16,
+    paddingVertical: 18,
     backgroundColor: '#FFFFFF',
     borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E0',
+    borderBottomColor: '#EFEFEF',
+    marginTop:30
   },
   headerTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
+    fontSize: 22,
+    fontWeight: '700',
+    color: '#222',
+    letterSpacing: 0.3,
   },
   markAllButton: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
   },
   markAllText: {
     fontSize: 14,
     color: '#FF6B6B',
     fontWeight: '600',
   },
+
+  // ---------- TABS ----------
   tabsContainer: {
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
     paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingVertical: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E0',
+    borderBottomColor: '#F0F0F0',
   },
   tab: {
-    paddingHorizontal: 16,
     paddingVertical: 8,
-    marginRight: 8,
+    paddingHorizontal: 18,
     borderRadius: 20,
+    marginRight: 10,
+    backgroundColor: '#F4F4F4',
   },
   activeTab: {
     backgroundColor: '#FF6B6B',
   },
   tabText: {
     fontSize: 14,
-    color: '#666',
+    color: '#777',
     fontWeight: '500',
   },
   activeTabText: {
     fontSize: 14,
-    color: '#FFFFFF',
+    color: '#FFF',
     fontWeight: '600',
   },
+
+  // ---------- LIST ----------
   listContainer: {
-    padding: 16,
+    paddingHorizontal: 14,
+    paddingTop: 12,
   },
+
+  // ---------- NOTIFICATION CARD ----------
   notificationItem: {
     flexDirection: 'row',
-    alignItems: 'center',
+    padding: 18,
     backgroundColor: '#FFFFFF',
-    padding: 16,
-    marginBottom: 12,
-    borderRadius: 12,
-    elevation: 2,
+    borderRadius: 14,
+    marginBottom: 14,
+
+    // Modern shadow
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    shadowOpacity: 0.08,
+    shadowOffset: { width: 0, height: 3 },
+    shadowRadius: 6,
+    elevation: 3,
   },
+
   unreadItem: {
-    backgroundColor: '#FFF5F5',
-    borderLeftWidth: 3,
+    backgroundColor: '#FFF4F4',
+    borderLeftWidth: 4,
     borderLeftColor: '#FF6B6B',
   },
+
+  // ---------- AVATAR + BADGE ----------
   avatarContainer: {
+    marginRight: 14,
     position: 'relative',
-    marginRight: 12,
   },
   avatar: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
+    width: 52,
+    height: 52,
+    borderRadius: 26,
   },
   iconBadge: {
     position: 'absolute',
@@ -258,36 +274,44 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     borderRadius: 12,
+    backgroundColor: '#FF6B6B',
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 2,
-    borderColor: '#FFFFFF',
+    borderColor: '#fff',
   },
+
+  // ---------- TEXT ----------
   notificationContent: {
     flex: 1,
+    justifyContent: 'center',
   },
   notificationText: {
-    fontSize: 14,
+    fontSize: 15,
     color: '#333',
-    marginBottom: 4,
+    lineHeight: 20,
   },
   userName: {
-    fontWeight: 'bold',
-    color: '#333',
+    fontWeight: '700',
+    color: '#222',
   },
   messageText: {
-    color: '#666',
+    color: '#555',
+    fontWeight: '400',
   },
   timeText: {
     fontSize: 12,
     color: '#999',
+    marginTop: 4,
   },
+
+  // ---------- UNREAD DOT ----------
   unreadDot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
+    width: 10,
+    height: 10,
+    borderRadius: 5,
     backgroundColor: '#FF6B6B',
-    marginLeft: 8,
+    marginLeft: 10,
   },
 });
 
